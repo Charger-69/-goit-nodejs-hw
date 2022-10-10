@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "srart": "node index",
+    "start": "node index",
     "start:dev": "nodemon index"
   },
   "repository": {
@@ -21,5 +21,8 @@
   "homepage": "https://github.com/Charger-69/-goit-nodejs-hw#readme",
   "devDependencies": {
     "nodemon": "^2.0.20"
+  },
+  "dependencies": {
+    "yarn": "^1.22.19"
   }
 }
