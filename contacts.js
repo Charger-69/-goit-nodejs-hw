@@ -31,10 +31,34 @@ const contactsPath = path.resolve(__dirname, "./db/contacts.json");
     }
   }
   
-  function removeContact(contactId) {
-    // ...твій код
+  async function addContact(name, email, phone) {
+    try {
+      const newContact = { id: v4(), name: name, email: email, phone: phone };
+      const allContacts = await listContacts();
+      const changedCollection = [...allContacts, newContact];
+      updateSourceFile(changedCollection);
+      return newContact;
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
+  async function removeContact(contactId) {
+    try {
+      const allContacts = await listContacts();
+      const changedCollection = allContacts.filter(({ id }) => id !== contactId);
+      updateSourceFile(changedCollection);
+      return allContacts.filter(({ id }) => id === contactId);
+    } catch (error) {
+      console.log(error);
+    }
   }
   
-  function addContact(name, email, phone) {
-    // ...твій код
-  }
+
+
+  module.exports = {
+    listContacts,
+    getContactById,
+    removeContact,
+    addContact,
+  };
