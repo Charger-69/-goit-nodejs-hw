@@ -21,13 +21,11 @@ async function invokeAction({ action, id, name, email, phone }) {
         break;
   
       case "get":
-        // ... id
         const contact = await contactsOperations.getContactById(id);
         console.table(contact);
         break;
 
         case "add":
-            // ... name email phone
             const addedContact = await contactsOperations.addContact(
               name,
               email,
@@ -37,7 +35,6 @@ async function invokeAction({ action, id, name, email, phone }) {
             break;
 
             case "remove":
-      // ... id
       const removeContact = await contactsOperations.removeContact(id);
       console.table(removeContact);
       break;

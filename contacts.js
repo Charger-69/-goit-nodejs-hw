@@ -1,15 +1,9 @@
-/*
- * Розкоментуйте і запиши значення
- * const contactsPath = ;
- */
 
 const fs = require("fs/promises");
 const path = require("path");
 const { v4 } = require("uuid");
 
 const contactsPath = path.resolve(__dirname, "./db/contacts.json");
-
-// TODO: задокументувати кожну функцію
 
   async function listContacts() {
     const data = await fs.readFile(contactsPath);
@@ -54,7 +48,6 @@ const contactsPath = path.resolve(__dirname, "./db/contacts.json");
     }
   }
   
-
 
   module.exports = {
     listContacts,
